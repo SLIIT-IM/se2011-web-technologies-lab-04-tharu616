@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campus Tech Store</title>
+
+  <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+
+  <!-- HEADER-->
+  <header>
+    <!-- Store logo -->
+    <img src="../images/logo.png" alt="Campus Tech Store Logo" class="logo" />
+    <!-- Store name -->
+    <h1>Campus Tech Store</h1>
+    <!-- Short description -->
+    <p>Your one-stop shop for all campus tech needs</p>
+  </header>
+
+  <!--NAVIGATION BAR -->
+  <nav>
+    <ul>
+      <!-- Each link scrolls to the matching section on the page -->
+      <li><a href="#home">Home</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#offers">Offers</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+
+      <!-- Dark mode toggle button inside the nav bar -->
+      <li>
+        <button id="darkModeBtn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+      </li>
+    </ul>
+  </nav>
+
+  <!--MAIN CONTENT-->
+  <main>
+
+    <!--  HOME SECTION-->
+    <section id="home">
+      <h2>Welcome to Campus Tech Store</h2>
+      <p>Get the best laptops, accessories, and gadgets at student-friendly prices!</p>
+
+      <!-- Hero image for the homepage -->
+      <img src="../images/hero.jpg" alt="Tech Store Banner" class="hero-img" />
+
+      <!-- Welcome button - shows a message when clicked -->
+      <br/>
+      <button onclick="showWelcome()">👋 Say Hello</button>
+
+      <!-- This paragraph will show the welcome message -->
+      <p id="welcomeMsg"></p>
+    </section>
+
+    <!--PRODUCTS SECTION  -->
+    <section id="products">
+      <h2>Our Products</h2>
+
+      <!-- Search box to filter the product table -->
+      <input
+        type="text"
+        id="searchBox"
+        placeholder="Search for a product..."
+        onkeyup="searchProducts()"
+      />
+
+      <!-- Product table -->
+      <table id="productTable">
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Price (LKR)</th>
+          </tr>
+        </thead>
+        <tbody id="productBody">
+          <tr>
+            <td>Laptop</td>
+            <td>Core i5, 8GB RAM, 256GB SSD</td>
+            <td>185,000</td>
+          </tr>
+          <tr>
+            <td>Wireless Mouse</td>
+            <td>Ergonomic, 2.4GHz wireless</td>
+            <td>3,500</td>
+          </tr>
+          <tr>
+            <td>USB-C Hub</td>
+            <td>7-in-1 multiport adapter</td>
+            <td>5,800</td>
+          </tr>
+          <tr>
+            <td>Mechanical Keyboard</td>
+            <td>Tenkeyless, RGB backlit</td>
+            <td>12,000</td>
+          </tr>
+          <tr>
+            <td>Webcam</td>
+            <td>1080p HD with built-in mic</td>
+            <td>8,500</td>
+          </tr>
+          <tr>
+            <td>Laptop Bag</td>
+            <td>Water-resistant, fits 15.6"</td>
+            <td>4,200</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Discount button -->
+      <br/>
+      <button onclick="applyDiscount()">🎁 Apply Student Discount</button>
+
+      <!-- This paragraph will show the discount message -->
+      <p id="discountMsg"></p>
+    </section>
+
+    <!--oFFERS SECTION-->
+    <section id="offers">
+      <h2>Student Offers</h2>
+      <p>Special deals available for university students:</p>
+
+      <!-- Ordered list of student offers -->
+      <ol>
+        <li>10% off on all laptops with a valid student ID</li>
+        <li>Free laptop bag with every laptop purchase</li>
+        <li>Buy any 2 accessories and get 15% off</li>
+        <li>Free 1-year warranty extension for students</li>
+        <li>Installment plans available — 0% interest for 6 months</li>
+      </ol>
+    </section>
+
+    <!--  ABOUT SECTION -->
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        Campus Tech Store has been serving students and faculty since 2015.
+        We offer the latest technology at affordable prices, with expert
+        advice and after-sales support right on campus.
+      </p>
+    </section>
+
+    <!--CONTACT SECTION-->
+    <section id="contact">
+      <h2>Contact Us</h2>
+
+      <!-- Contact form — no <form> tag; we use a div and handle submission manually -->
+      <div class="contact-form">
+
+        <!-- Name field -->
+        <label for="userName">Your Name:</label>
+        <input type="text" id="userName" placeholder="Enter your name" />
+
+        <!-- Email field -->
+        <label for="userEmail">Your Email:</label>
+        <input type="email" id="userEmail" placeholder="Enter your email" />
+
+        <!-- Message field -->
+        <label for="userMessage">Your Message:</label>
+        <textarea id="userMessage" placeholder="Type your message here..."></textarea>
+
+        <!-- Submit button — calls the validateForm() function -->
+        <button onclick="validateForm()">📨 Send Message</button>
+
+        <!-- This paragraph shows success or error messages -->
+        <p id="formMsg"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <p>&copy; 2025 Campus Tech Store. All rights reserved.</p>
+    <p>
+      <!-- Social / external links -->
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">Twitter</a>
+    </p>
+  </footer>
+
+  <!-- Link to the JavaScript file -->
+  <script src="../js/script.js"></script>
+
+</body>
+</html>
